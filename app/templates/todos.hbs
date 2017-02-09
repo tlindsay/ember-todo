@@ -5,27 +5,21 @@
   </header>
   <section id="main">
     <ul id="todo-list">
-      {{#each model as |todo|}}
-        <li class="{{if todo.isCompleted 'completed'}}">
-          <input type="checkbox" class="toggle">
-          <label>{{todo.title}}</label>
-          <button class="destroy"></button>
-        </li>
-      {{/each}}
+      {{outlet}}
     </ul>
   </section>
   <footer id="footer">
     <span id="todo-count">
-      <strong>2</strong> todos left
+      <strong>{{activeCount}}</strong> todos left
     </span>
     <ul id="filters">
-      <li><a href="all" class="selected">All</a></li>
-      <li><a href="active">Active</a></li>
-      <li><a href="completed">Completed</a></li>
+      <li>{{#link-to 'todos'}}All{{/link-to}}</li>
+      <li>{{#link-to 'todos.active'}}Active{{/link-to}}</li>
+      <li>{{#link-to 'todos.completed'}}Completed{{/link-to}}</li>
     </ul>
 
     <button id="clear-completed">
-      Clear completed (1)
+      Clear completed ({{completedCount}})
     </button>
   </footer>
 </section>
