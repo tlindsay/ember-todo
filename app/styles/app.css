@@ -238,11 +238,13 @@ label[for='toggle-all'] {
   position: relative;
 }
 
-#todo-list li label {
+#todo-list li label,
+#todo-list li .todo-item-editing{
   word-break: break-word;
   padding: 15px;
   margin-left: 45px;
   display: block;
+  font-size:24px;
   line-height: 1.2;
   -webkit-transition: color 0.4s;
   -moz-transition: color 0.4s;
@@ -351,7 +353,7 @@ label[for='toggle-all'] {
   text-decoration: none;
 }
 
-#filters li a.selected {
+#filters li a.active {
   font-weight: bold;
 }
 

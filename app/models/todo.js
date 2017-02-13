@@ -18,12 +18,12 @@ Todo.reopenClass({
       isCompleted: false
     },
     {
-      id: 4,
-      title: 'Fuck shit up',
+      id: 3,
+      title: 'Mess things up',
       isCompleted: false
     },
     {
-      id: 3,
+      id: 4,
       title: 'Profit!',
       isCompleted: false
     }

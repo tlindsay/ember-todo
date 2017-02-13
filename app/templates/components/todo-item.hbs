@@ -1,5 +1,9 @@
 <li class="{{if todo.isCompleted 'completed'}}">
   <input type="checkbox" class="toggle" {{action 'markAsCompleted' todo}}>
-  <label>{{todo.title}}</label>
-  <button class="destroy"></button>
+  {{#if editing}}
+    {{input value=todo.title autofocus='true' class="todo-item-editing" enter='saveTodo'}}
+  {{else}}
+    <label contenteditable={{editing}}>{{todo.title}}</label>
+  {{/if}}
+  <button class="destroy" {{action 'destroyTodo' todo}}></button>
 </li>
