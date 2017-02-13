@@ -11,8 +11,9 @@ export default Ember.Controller.extend({
   actions: {
     toggleCompletion(todo) {
       console.log('controller action');
-      todo.toggleProperty('isCompleted');
-      todo.save();
+      let t = this.store.findRecord('todo', todo);
+      t.toggleProperty('isCompleted');
+      t.save();
     },
     createTodo(text) {
       let todo = this.store.createRecord('todo', {

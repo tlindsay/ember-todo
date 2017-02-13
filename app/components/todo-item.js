@@ -17,8 +17,9 @@ export default Ember.Component.extend({
     },
     saveTodo: function(todo) {
       this.set('editing', false);
-      console.log(todo);
-      rec = this.store.findRecord('todo', todo);
+      window.todo = todo;
+      console.log(todo.get('title'));
+      todo.save();
     },
     destroyTodo: function(todo) {
       console.log('Destroying item: ', todo);

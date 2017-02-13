@@ -1,4 +1,4 @@
-import DS from 'ember-data';
-import fixtures from 'ember-data-fixture-adapter';
+import FirebaseAdapter from 'emberfire/adapters/firebase';
 
-export default fixtures.extend();
+export default FirebaseAdapter.extend({
+});

@@ -1,9 +1,12 @@
 <li class="{{if todo.isCompleted 'completed'}}">
   <input type="checkbox" class="toggle" {{action 'markAsCompleted' todo}}>
   {{#if editing}}
-    {{input value=todo.title autofocus='true' class="todo-item-editing" enter='saveTodo'}}
+    <form {{action 'saveTodo' todo on='submit'}}>
+      {{input value=todo.title autofocus='true' class="todo-item-editing"}}
+      {{input type='hidden' value=todo.id}}
+    </form>
   {{else}}
-    <label contenteditable={{editing}}>{{todo.title}}</label>
+    <label>{{todo.title}}</label>
   {{/if}}
   <button class="destroy" {{action 'destroyTodo' todo}}></button>
 </li>
